@@ -23,6 +23,30 @@ Or, you can download the file locally and include it like this:
 !include path/to/ApiManagement.puml
 ```
 
+Next, you can use the available macros to add the API Management resources to your diagram. 
+Here's an example of a PlantUML diagram that includes an API, two products and a backend:
+
+```
+@startuml Hello World
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+$ApimProduct(starterProduct, "Starter")
+$ApimProduct(unlimitedProduct, "Unlimited")
+$ApimAPI(echoApi, "Echo API")
+$ApimBackend(echoBackend, "Echo Backend")
+
+starterProduct --> echoApi
+unlimitedProduct --> echoApi
+echoApi --> echoBackend
+
+@enduml
+```
+
+The diagram above will render as follows:
+
+![Hello World](./samples/hello-world.png)
+
 
 ## Available Symbols
 
