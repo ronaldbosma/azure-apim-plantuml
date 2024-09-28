@@ -1,0 +1,18 @@
+@startuml Operations
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+left to right direction
+
+$ApimAPI(echoApi, "Echo API")
+
+!$operations = [
+    { "Method": "GET",    "Description": "Retrieve a resource",         "UrlTemplate": "/resources" },
+    { "Method": "POST",   "Description": "Create a resource",           "UrlTemplate": "/resources" },
+    { "Method": "PUT",    "Description": "Update a resource",           "UrlTemplate": "/resources/{id}" },
+    { "Method": "PATCH",  "Description": "Partially Update a resource", "UrlTemplate": "/resources/{id}" },
+    { "Method": "DELETE", "Description": "Delete a resource",           "UrlTemplate": "/resources/{id}" }
+]
+$ApimOperations(echoApi, $operations, "right")
+
+@enduml

@@ -48,7 +48,9 @@ The diagram above will render as follows:
 ![Hello World](./samples/hello-world.png)
 
 
-## Available Symbols
+## Components
+
+### Available Symbols
 
 The following symbols are available in the current version of Azure API Management PlantUML:
 
@@ -59,3 +61,42 @@ The following symbols are available in the current version of Azure API Manageme
 | Product | ![Product](./dist/v1/sprites/Product.svg) | `ApimProduct` | `$ApimProduct(alias, "label")` |
 | Subscription | ![Subscription](./dist/v1/sprites/Subscription.svg) | `ApimSubscription` | `$ApimSubscription(alias, "label")` |
 | User | ![User](./dist/v1/sprites/User.svg) | `ApimUser` | `$ApimUser(alias, "label")` |
+
+### API Operations
+
+It is possible to add operations to an API by using the `ApimAPIOperation` macro. This macro will render the operations as a table inside a note attached to the API.
+
+The macro takes the following parameters:
+
+| Parameter | Description |
+|-|-|
+| api | The alias of the API. |
+| operations | A JSON array of operations. Each operation should specify the `Method`, `Description` and `UrlTemplate`. |
+| alignment | The position of the note in relation to the API (default is `bottom`). |
+
+Here's an example of how to add operations to an API:
+
+```
+@startuml Operations
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+left to right direction
+
+$ApimAPI(echoApi, "Echo API")
+
+!$operations = [
+    { "Method": "GET",    "Description": "Retrieve a resource",         "UrlTemplate": "/resources" },
+    { "Method": "POST",   "Description": "Create a resource",           "UrlTemplate": "/resources" },
+    { "Method": "PUT",    "Description": "Update a resource",           "UrlTemplate": "/resources/{id}" },
+    { "Method": "PATCH",  "Description": "Partially Update a resource", "UrlTemplate": "/resources/{id}" },
+    { "Method": "DELETE", "Description": "Delete a resource",           "UrlTemplate": "/resources/{id}" }
+]
+$ApimOperations(echoApi, $operations, "right")
+
+@enduml
+```
+
+The diagram above will render as follows:
+
+![Operations](./samples/operations.png)
