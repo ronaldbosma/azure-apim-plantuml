@@ -1,7 +1,6 @@
 @startuml Hello World
 
 !include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
-' !include ./dist/v1/ApiManagement.puml
 
 left to right direction
 
