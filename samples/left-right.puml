@@ -5,23 +5,23 @@
 left to right direction
 
 ' Users
-$User(johnDoe, "John Doe")
-$User(aliceSmith, "Alice Smith")
+$ApimUser(johnDoe, "John Doe")
+$ApimUser(aliceSmith, "Alice Smith")
 
 ' Subscriptions
-$Subscription(johnDoe_StarterSubscription, "John Doe on Starter")
-$Subscription(aliceSmith_StarterSubscription, "Alice Smith on Starter")
-$Subscription(aliceSmith_UnlimitedSubscription, "Alice Smith on Unlimited")
+$ApimSubscription(johnDoe_StarterSubscription, "John Doe on Starter")
+$ApimSubscription(aliceSmith_StarterSubscription, "Alice Smith on Starter")
+$ApimSubscription(aliceSmith_UnlimitedSubscription, "Alice Smith on Unlimited")
 
 ' Products
-$Product(starterProduct, "Starter")
-$Product(unlimitedProduct, "Unlimited")
+$ApimProduct(starterProduct, "Starter")
+$ApimProduct(unlimitedProduct, "Unlimited")
 
 ' APIs
-$Api(echoApi, "Echo API")
+$ApimApi(echoApi, "Echo API")
 
 ' Backends
-$Backend(echoBackend, "Echo Backend")
+$ApimBackend(echoBackend, "Echo Backend")
 
 ' Operations
 !$operations = [
@@ -31,7 +31,7 @@ $Backend(echoBackend, "Echo Backend")
     { "Method": "PATCH",  "Description": "Partially Update a resource", "UrlTemplate": "/resources/{id}" },
     { "Method": "DELETE", "Description": "Delete a resource",           "UrlTemplate": "/resources/{id}" }
 ]
-$Operations(echoApi, $operations, "right")
+$ApimOperations(echoApi, $operations, "right")
 
 
 ' Relationships

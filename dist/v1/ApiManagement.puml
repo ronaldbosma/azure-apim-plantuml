@@ -57,19 +57,19 @@ table {
     ' The <#FFFFFF,#FFFFFF> will hide the tables borders
 
     !if ($includeUser == %true())
-      <#FFFFFF,#FFFFFF>| <$UserSprite> | User |
+      <#FFFFFF,#FFFFFF>| <$ApimSprite> | User |
     !endif
     !if ($includeSubscription == %true())
-      <#FFFFFF,#FFFFFF>| <$SubscriptionSprite> | Subscription |
+      <#FFFFFF,#FFFFFF>| <$ApimSubscriptionSprite> | Subscription |
     !endif
     !if ($includeProduct == %true())
-      <#FFFFFF,#FFFFFF>| <$ProductSprite{scale=0.35}> | Product |
+      <#FFFFFF,#FFFFFF>| <$ApimProductSprite{scale=0.35}> | Product |
     !endif
     !if ($includeApi == %true())
-      <#FFFFFF,#FFFFFF>| <$ApiSprite{scale=0.35}> | Api |
+      <#FFFFFF,#FFFFFF>| <$ApimApiSprite{scale=0.35}> | Api |
     !endif
     !if ($includeBackend == %true())
-      <#FFFFFF,#FFFFFF>| <$BackendSprite> | Backend |
+      <#FFFFFF,#FFFFFF>| <$ApimBackendSprite> | Backend |
     !endif
 
   endlegend
@@ -82,73 +82,73 @@ table {
 
 ' User
 
-sprite $UserSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+sprite $ApimSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
   <path d="M15.72 18a1.45 1.45 0 0 0 1.45-1.45.47.47 0 0 0 0-.17C16.59 11.81 14 8.09 9 8.09s-7.66 3.15-8.17 8.3A1.46 1.46 0 0 0 2.14 18h13.58Z" fill="#32d4f5" />
   <path d="M9 9.17a4.59 4.59 0 0 1-2.48-.73L9 14.86l2.44-6.38A4.53 4.53 0 0 1 9 9.17Z" opacity=".8" fill="#fff" />
   <circle cx="9.01" cy="4.58" r="4.58" fill="#32d4f5" />
 </svg>
 
-$setApimEntitySkin(User)
+$setApimEntitySkin(ApimUser)
 
-!procedure $User($alias, $label)
+!procedure $ApimUser($alias, $label)
   ' The default icon is a bit too small, so we scale it up
   !$scale = 3
-  $createApimBaseEntity($alias, $label, UserSprite, User, $scale)
+  $createApimBaseEntity($alias, $label, ApimSprite, ApimUser, $scale)
 !endprocedure
 
 
 ' Subscription
 
-sprite $SubscriptionSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+sprite $ApimSubscriptionSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
   <path fill="#feac19" d="M13.563 7.187a2.074 2.074 0 0 0 0-2.927L10 .688a2.06 2.06 0 0 0-2.919 0L3.522 4.259a2.075 2.075 0 0 0 0 2.928l2.963 2.971a.581.581 0 0 1 .17.411v5.523a.708.708 0 0 0 .206.5l1.35 1.354a.468.468 0 0 0 .662 0l1.309-1.313v-.013l.772-.773a.271.271 0 0 0 0-.382l-.556-.557a.3.3 0 0 1 0-.417l.556-.557a.271.271 0 0 0 0-.382L10.4 13a.3.3 0 0 1 0-.417l.557-.558a.27.27 0 0 0 0-.381l-.773-.776v-.285zM8.542 1.552A1.175 1.175 0 1 1 7.37 2.727a1.174 1.174 0 0 1 1.172-1.175z" />
   <path fill="#fea11b" d="M7.616 16.21a.252.252 0 0 0 .426-.192v-4.469a.268.268 0 0 0-.116-.222.253.253 0 0 0-.39.222v4.469a.268.268 0 0 0 .08.192zM6.006 5.45h5.223a.316.316 0 0 1 .316.316v.059a.317.317 0 0 1-.317.317H6.005a.316.316 0 0 1-.316-.316v-.06a.317.317 0 0 1 .317-.317zm0 1.125h5.223a.316.316 0 0 1 .316.316v.06a.316.316 0 0 1-.316.316H6.006a.317.317 0 0 1-.317-.317v-.058a.317.317 0 0 1 .317-.317z" opacity=".75" />
 </svg>
 
-$setApimEntitySkin(Subscription)
+$setApimEntitySkin(ApimSubscription)
 
-!procedure $Subscription($alias, $label) 
+!procedure $ApimSubscription($alias, $label) 
   ' The default icon is a bit too small, so we scale it up
   !$scale = 3
-  $createApimBaseEntity($alias, $label, SubscriptionSprite, Subscription, $scale)
+  $createApimBaseEntity($alias, $label, ApimSubscriptionSprite, ApimSubscription, $scale)
 !endprocedure
 
 
 ' Product
 
-sprite $ProductSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+sprite $ApimProductSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
   <path d="M24.89 48.95 2.34 42.2A3.57 3.57 0 0 1 0 39.29v-29c0-1.53 1.46-2.47 2.93-2.87L25.55.95c.18 0 .9.18.9.37l1.43 47.28a4.66 4.66 0 0 1-2.99.35Z" fill="#3796c4" />
   <path d="m48 42.29-20.63 6.56a1.66 1.66 0 0 1-2.18-1.64V1.53a.58.58 0 0 1 .75-.58L48 8.29c1 .3 2 1 2 1.91v29.75a2.41 2.41 0 0 1-2 2.34Zm-1-30-17-5v36l17-5Z" fill="#59b2d7" />
   <path d="M41.39 28.37h-3.84V14.28l3.84.79z" />
   <path d="m43.32 27.81-7.91.35 4.13 8.24z" />
 </svg>
 
-$setApimEntitySkin(Product)
+$setApimEntitySkin(ApimProduct)
 
-!procedure $Product($alias, $label) 
-  $createApimBaseEntity($alias, $label, ProductSprite, Product)
+!procedure $ApimProduct($alias, $label) 
+  $createApimBaseEntity($alias, $label, ApimProductSprite, ApimProduct)
 !endprocedure
 
 
 ' API
 
-sprite $ApiSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+sprite $ApimApiSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
   <path d="M0 20.84h19.55v8.32H0z" fill="#57a300"/>
   <path d="M41.68 20.84h10.26v8.32H41.68z" fill="#59b4d9"/>
   <circle cx="20.12" cy="25" r="9.46" fill="#57a300"/>
   <path d="M20.12.48v10.96a1 1 0 0 1 0 27.14v10.96a1 1 0 0 0 0-49.05Z" fill="#59b4d9"/>
 </svg>
 
-$setApimEntitySkin(Api)
+$setApimEntitySkin(ApimApi)
 
-!procedure $Api($alias, $label) 
-  $createApimBaseEntity($alias, $label, ApiSprite, Api)
+!procedure $ApimApi($alias, $label) 
+  $createApimBaseEntity($alias, $label, ApimApiSprite, ApimApi)
 !endprocedure
 
 
 ' Operations
 
 ' Creates a note with a table containing the API operations
-!procedure $Operations($api, $operations, $alignment="bottom")
+!procedure $ApimOperations($api, $operations, $alignment="bottom")
   !$numberOfOperations = %size($operations)
   !$i=0
 
@@ -164,7 +164,7 @@ $setApimEntitySkin(Api)
 
 ' Backend
 
-sprite $BackendSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+sprite $ApimBackendSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
   <path fill="#3c91e5" d="M18 10.55a4.11 4.11 0 0 0-3.51-4 5.14 5.14 0 0 0-5.25-5 5.26 5.26 0 0 0-5 3.47A4.87 4.87 0 0 0 0 9.82a4.94 4.94 0 0 0 5.07 4.8h8.65a1.46 1.46 0 0 0 .22 0A4.13 4.13 0 0 0 18 10.55z" />
   <circle cx="5.24" cy="9.65" r=".71" fill="#e3e3e3" />
   <path d="M7.74 9.92v-.57h-.08l-.61-.2-.16-.39.31-.66-.4-.4h-.08l-.57.3-.39-.16-.25-.69h-.57v.08l-.2.61-.42.16-.65-.31-.4.4v.08l.29.57-.16.39-.7.25V10h.08l.61.2.16.39-.31.66.4.4h.08l.57-.29.39.16.25.69h.57v-.08l.2-.61.39-.16.66.31.4-.4v-.08l-.29-.57.16-.39zm-2.5.83a1.1 1.1 0 1 1 1.1-1.1 1.09 1.09 0 0 1-1.1 1.1z" fill="#fff" />
@@ -172,10 +172,10 @@ sprite $BackendSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18
   <path d="M13 6.91v-.68h-.09L12.17 6 12 5.49l.37-.8-.48-.48h-.09l-.69.35-.46-.19-.3-.83h-.71v.1l-.24.73-.47.19-.78-.37-.48.48.05.09.28.74-.16.5-.84.27V7h.1l.73.24.17.45-.37.8.5.51.1-.05.68-.35.47.19.3.83h.68v-.1l.24-.73.47-.19.79.37.48-.48-.05-.09-.29-.72.19-.47zm-3 1a1.32 1.32 0 1 1 1.32-1.32A1.31 1.31 0 0 1 10 7.91z" fill="#fff" />
 </svg>
 
-$setApimEntitySkin(Backend)
+$setApimEntitySkin(ApimBackend)
 
-!procedure $Backend($alias, $label)
+!procedure $ApimBackend($alias, $label)
   ' The default icon is a bit too small, so we scale it up
   !$scale = 3
-  $createApimBaseEntity($alias, $label, BackendSprite, Backend, $scale)
+  $createApimBaseEntity($alias, $label, ApimBackendSprite, ApimBackend, $scale)
 !endprocedure
