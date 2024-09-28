@@ -1,6 +1,6 @@
 # Azure API Management PlantUML
 
-This repository provides [PlantUML](https://plantuml.com/) sprites, macros, and stereotypes specifically designed for creating diagrams with [Azure API Management](https://azure.microsoft.com/products/api-management) components.
+This repository provides [PlantUML](https://plantuml.com/) sprites, macros and stereotypes specifically designed for creating diagrams with [Azure API Management](https://azure.microsoft.com/products/api-management) components.
 
 The [Azure-PlantUML](https://github.com/plantuml-stdlib/Azure-PlantUML) library includes symbols for a wide range of Azure services but does not cover the specific resources within Azure API Management. This project bridges that gap by providing the necessary visual elements.
 
@@ -38,7 +38,7 @@ Alternatively, you can download the `ApiManagement.puml` file locally and includ
 ```
 
 Once you've included the `ApiManagement.puml` file, you can use the available macros to add API Management resources to your diagram. 
-Here's an example of a PlantUML diagram that includes an API, two products, and a backend:
+Here's an example of a PlantUML diagram that includes an API, two products and a backend:
 
 ```
 @startuml Hello World
@@ -76,12 +76,12 @@ The following symbols are available in the current version of Azure API Manageme
 | Subscription | ![Subscription](./dist/v1/sprites/Subscription.svg) | `ApimSubscription` | `$ApimSubscription(alias, "label")` |
 | User | ![User](./dist/v1/sprites/User.svg) | `ApimUser` | `$ApimUser(alias, "label")` |
 
-All macros take an `$alias` and `$label` as parameters. The `$alias` serves as a unique identifier for the resource and can be used to establish relationships between resources. The `$label` is the text displayed alongside the icon.
+All macros take an `$alias` and `$label` parameter. The `$alias` serves as a unique identifier for the resource and can be used to establish relationships between resources. The `$label` is the text displayed alongside the icon.
 
 
 ### API Operations
 
-You can add operations to an API using the `ApimAPIOperation` macro. This macro renders the operations as a table inside a note attached to the API.
+You can add operations to an API using the `ApimOperations` macro. This macro renders the operations as a table inside a note attached to the API.
 
 The macro takes the following parameters:
 
@@ -120,7 +120,7 @@ The diagram above will render as follows:
 
 ### Legend
 
-You can add a legend to your diagram to explain the different symbols using the `ApimLegend` macro. This helps to clarify the meaning of each symbol used in your API Management diagram.
+You can add a legend to your diagram to explain the different symbols using the `ApimSymbolLegend` macro. This helps to clarify the meaning of each symbol used in your API Management diagram.
 
 The macro takes the following parameters:
 
@@ -304,7 +304,7 @@ The diagram above will render as follows:
 
 ### Raw Sprites
 
-If you prefer to use raw SVG sprites in your PlantUML diagrams, you can include them directly. This allows for more flexibility in customizing the appearance of your components. Here's the same example from the getting started section that includes an API, two products, and a backend:
+If you prefer to use raw SVG sprites in your PlantUML diagrams, you can include them directly. This allows for more flexibility in customizing the appearance of your components. Here's the same example from the getting started section that includes an API, two products and a backend:
 
 ```
 @startuml Hello World with Sprites
