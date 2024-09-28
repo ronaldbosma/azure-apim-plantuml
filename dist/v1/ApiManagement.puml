@@ -51,31 +51,6 @@ table {
 !endprocedure
 
 
-' Creates a legend with the specified entities
-!procedure $createApimLegend($includeUser=%true(), $includeSubscription=%true(), $includeProduct=%true(), $includeApi=%true(), $includeBackend=%true(), $alignment="")
-  legend $alignment
-    ' The <#FFFFFF,#FFFFFF> will hide the tables borders
-
-    !if ($includeUser == %true())
-      <#FFFFFF,#FFFFFF>| <$ApimSprite> | User |
-    !endif
-    !if ($includeSubscription == %true())
-      <#FFFFFF,#FFFFFF>| <$ApimSubscriptionSprite> | Subscription |
-    !endif
-    !if ($includeProduct == %true())
-      <#FFFFFF,#FFFFFF>| <$ApimProductSprite{scale=0.35}> | Product |
-    !endif
-    !if ($includeApi == %true())
-      <#FFFFFF,#FFFFFF>| <$ApimAPISprite{scale=0.35}> | Api |
-    !endif
-    !if ($includeBackend == %true())
-      <#FFFFFF,#FFFFFF>| <$ApimBackendSprite> | Backend |
-    !endif
-
-  endlegend
-!endprocedure
-
-
 ' ##################################################
 ' Icons
 ' ##################################################
@@ -180,4 +155,33 @@ $setApimEntitySkin(ApimBackend)
       !$i = $i + 1
       !endwhile
   end note
+!endprocedure
+
+
+' ##################################################
+' Legend
+' ##################################################
+
+' Creates a legend with the specified entities
+!procedure $createApimLegend($includeUser=%true(), $includeSubscription=%true(), $includeProduct=%true(), $includeApi=%true(), $includeBackend=%true(), $alignment="")
+  legend $alignment
+    ' The <#FFFFFF,#FFFFFF> will hide the tables borders
+
+    !if ($includeUser == %true())
+      <#FFFFFF,#FFFFFF>| <$ApimSprite> | User |
+    !endif
+    !if ($includeSubscription == %true())
+      <#FFFFFF,#FFFFFF>| <$ApimSubscriptionSprite> | Subscription |
+    !endif
+    !if ($includeProduct == %true())
+      <#FFFFFF,#FFFFFF>| <$ApimProductSprite{scale=0.35}> | Product |
+    !endif
+    !if ($includeApi == %true())
+      <#FFFFFF,#FFFFFF>| <$ApimAPISprite{scale=0.35}> | Api |
+    !endif
+    !if ($includeBackend == %true())
+      <#FFFFFF,#FFFFFF>| <$ApimBackendSprite> | Backend |
+    !endif
+
+  endlegend
 !endprocedure
