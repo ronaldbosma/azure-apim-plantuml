@@ -76,7 +76,7 @@ The following symbols are available in the current version of Azure API Manageme
 | Subscription | ![Subscription](./dist/v1/sprites/Subscription.svg) | `ApimSubscription` | `$ApimSubscription(alias, "label")` |
 | User | ![User](./dist/v1/sprites/User.svg) | `ApimUser` | `$ApimUser(alias, "label")` |
 
-All macros take an `alias` and `label` as parameters. The `alias` serves as a unique identifier for the resource and can be used to establish relationships between resources. The `label` is the text displayed alongside the icon.
+All macros take an `$alias` and `$label` as parameters. The `$alias` serves as a unique identifier for the resource and can be used to establish relationships between resources. The `$label` is the text displayed alongside the icon.
 
 
 ### API Operations
@@ -87,9 +87,9 @@ The macro takes the following parameters:
 
 | Parameter | Description |
 |-|-|
-| api | The alias of the API. |
-| operations | A JSON array of operations. Each operation should specify the `Method`, `Description` and `UrlTemplate`. |
-| alignment | The position of the note in relation to the API (default is `bottom`). |
+| `$api` | The alias of the API. |
+| `$operations` | A JSON array of operations. Each operation should specify the `Method`, `Description` and `UrlTemplate`. |
+| `$alignment` | The position of the note in relation to the API (default is `bottom`). |
 
 Here's an example of how to add operations to an API:
 
@@ -126,12 +126,12 @@ The macro takes the following parameters:
 
 | Parameter | Description |
 |-|-|
-| includeUser | Include the User symbol in the legend (default is `true`). |
-| includeSubscription | Include the Subscription symbol in the legend (default is `true`). |
-| includeProduct | Include the Product symbol in the legend (default is `true`). |
-| includeAPI | Include the API symbol in the legend (default is `true`). |
-| includeBackend | Include the Backend symbol in the legend (default is `true`). |
-| alignment | The position of the legend (default is `""`). |
+| `$includeUser` | Include the User symbol in the legend (default is `true`). |
+| `$includeSubscription` | Include the Subscription symbol in the legend (default is `true`). |
+| `$includeProduct` | Include the Product symbol in the legend (default is `true`). |
+| `$includeAPI` | Include the API symbol in the legend (default is `true`). |
+| `$includeBackend` | Include the Backend symbol in the legend (default is `true`). |
+| `$alignment` | The position of the legend (default is `""`). |
 
 Here's an example of how to add a legend to your diagram with all symbols:
 
@@ -231,7 +231,7 @@ By default, PlantUML diagrams are rendered from top to bottom. In some cases, it
 left to right direction
 ```
 
-When rendering the diagram from left to right, you might also want to adjust the alignment of the operations. You can do this by setting the `alignment` parameter of the `ApimOperations` macro. For example, to align the operations to the right of the API:
+When rendering the diagram from left to right, you might also want to adjust the alignment of the operations. You can do this by setting the `$alignment` parameter of the `ApimOperations` macro. For example, to align the operations to the right of the API:
 
 ```
 $ApimOperations(echoApi, $operations, "right")
