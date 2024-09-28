@@ -203,3 +203,83 @@ The diagram above will render as follows:
 
 ![All Components - Top Down](./samples/top-down.png)
 
+
+## Customizations
+
+### Left to Right Direction
+
+By default, PlantUML diagrams are rendered from top to bottom. In some cases it might be more convenient to render the diagram from left to right. You can achieve this by adding the following line at the top of your PlantUML file:
+
+```
+left to right direction
+```
+
+When rendering the diagram from left to right, you might also want to adjust the alignment of the operations. You can do this by setting the `alignment` parameter of the `ApimOperations` macro. For example, to align the operations to the right of the API:
+
+```
+$ApimOperations(echoApi, $operations, "right")
+```
+
+Here's an example of a PlantUML diagram that renders from left to right:
+
+```
+@startuml All Components - Left to Right
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+left to right direction
+
+' Users
+$ApimUser(johnDoe, "John Doe")
+$ApimUser(aliceSmith, "Alice Smith")
+
+' Subscriptions
+$ApimSubscription(johnDoe_StarterSubscription, "John Doe on Starter")
+$ApimSubscription(aliceSmith_StarterSubscription, "Alice Smith on Starter")
+$ApimSubscription(aliceSmith_UnlimitedSubscription, "Alice Smith on Unlimited")
+
+' Products
+$ApimProduct(starterProduct, "Starter")
+$ApimProduct(unlimitedProduct, "Unlimited")
+
+' APIs
+$ApimAPI(echoApi, "Echo API")
+
+' Backends
+$ApimBackend(echoBackend, "Echo Backend")
+
+' Operations
+!$operations = [
+    { "Method": "GET",    "Description": "Retrieve a resource",         "UrlTemplate": "/resources" },
+    { "Method": "POST",   "Description": "Create a resource",           "UrlTemplate": "/resources" },
+    { "Method": "PUT",    "Description": "Update a resource",           "UrlTemplate": "/resources/{id}" },
+    { "Method": "PATCH",  "Description": "Partially Update a resource", "UrlTemplate": "/resources/{id}" },
+    { "Method": "DELETE", "Description": "Delete a resource",           "UrlTemplate": "/resources/{id}" }
+]
+$ApimOperations(echoApi, $operations, "right")
+
+
+' Relationships
+johnDoe --> johnDoe_StarterSubscription
+johnDoe_StarterSubscription --> starterProduct
+
+aliceSmith --> aliceSmith_StarterSubscription
+aliceSmith_StarterSubscription --> starterProduct
+
+aliceSmith --> aliceSmith_UnlimitedSubscription
+aliceSmith_UnlimitedSubscription --> unlimitedProduct
+
+starterProduct --> echoApi
+unlimitedProduct --> echoApi
+echoApi --> echoBackend
+
+
+' Legend
+$ApimSymbolLegend()
+
+@enduml
+```
+
+The diagram above will render as follows:
+
+![All Components - Left to Right](./samples/left-right.png)
