@@ -7,6 +7,19 @@ The [Azure-PlantUML](https://github.com/plantuml-stdlib/Azure-PlantUML) library 
 With Azure API Management PlantUML, you can create visually distinct and recognizable diagrams for your API Management solutions.
 
 
+## Content
+
+- [Content](#content)
+- [Getting Started](#getting-started)
+- [Components](#components)
+  - [Symbols](#symbols)
+  - [API Operations](#api-operations)
+  - [Legend](#legend)
+  - [Sample](#sample)
+- [Customizations](#customizations)
+  - [Left to Right Direction](#left-to-right-direction)
+
+
 ## Getting Started
 
 To use the Azure API Management symbols in your PlantUML diagrams, include the [ApiManagement.puml](./dist/v1/ApiManagement.puml) file at the top of your `.puml` file.
@@ -50,7 +63,7 @@ The diagram above will render as follows:
 
 ## Components
 
-### Available Symbols
+### Symbols
 
 The following symbols are available in the current version of Azure API Management PlantUML:
 
