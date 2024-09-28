@@ -138,3 +138,68 @@ If you want to exclude certain symbols from the legend, you can do so by setting
 $ApimSymbolLegend($includeUser=%false(), $includeSubscription=%false(), $alignment="top")
 ```
 
+
+### Sample
+
+Here's an example of a PlantUML diagram that includes all the available components:
+
+```
+@startuml All Components - Top Down
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+' Users
+$ApimUser(johnDoe, "John Doe")
+$ApimUser(aliceSmith, "Alice Smith")
+
+' Subscriptions
+$ApimSubscription(johnDoe_StarterSubscription, "John Doe on Starter")
+$ApimSubscription(aliceSmith_StarterSubscription, "Alice Smith on Starter")
+$ApimSubscription(aliceSmith_UnlimitedSubscription, "Alice Smith on Unlimited")
+
+' Products
+$ApimProduct(starterProduct, "Starter")
+$ApimProduct(unlimitedProduct, "Unlimited")
+
+' APIs
+$ApimAPI(echoApi, "Echo API")
+
+' Backends
+$ApimBackend(echoBackend, "Echo Backend")
+
+' Operations
+!$operations = [
+    { "Method": "GET",    "Description": "Retrieve a resource",         "UrlTemplate": "/resources" },
+    { "Method": "POST",   "Description": "Create a resource",           "UrlTemplate": "/resources" },
+    { "Method": "PUT",    "Description": "Update a resource",           "UrlTemplate": "/resources/{id}" },
+    { "Method": "PATCH",  "Description": "Partially Update a resource", "UrlTemplate": "/resources/{id}" },
+    { "Method": "DELETE", "Description": "Delete a resource",           "UrlTemplate": "/resources/{id}" }
+]
+$ApimOperations(echoApi, $operations)
+
+
+' Relationships
+johnDoe --> johnDoe_StarterSubscription
+johnDoe_StarterSubscription --> starterProduct
+
+aliceSmith --> aliceSmith_StarterSubscription
+aliceSmith_StarterSubscription --> starterProduct
+
+aliceSmith --> aliceSmith_UnlimitedSubscription
+aliceSmith_UnlimitedSubscription --> unlimitedProduct
+
+starterProduct --> echoApi
+unlimitedProduct --> echoApi
+echoApi --> echoBackend
+
+
+' Legend
+$ApimSymbolLegend()
+
+@enduml
+```
+
+The diagram above will render as follows:
+
+![All Components - Top Down](./samples/top-down.png)
+
