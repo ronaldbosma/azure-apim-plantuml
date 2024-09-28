@@ -1,0 +1,53 @@
+@startuml Hello World
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+' Users
+$User(johnDoe, "John Doe")
+$User(aliceSmith, "Alice Smith")
+
+' Subscriptions
+$Subscription(johnDoe_StarterSubscription, "John Doe on Starter")
+$Subscription(aliceSmith_StarterSubscription, "Alice Smith on Starter")
+$Subscription(aliceSmith_UnlimitedSubscription, "Alice Smith on Unlimited")
+
+' Products
+$Product(starterProduct, "Starter")
+$Product(unlimitedProduct, "Unlimited")
+
+' APIs
+$Api(echoApi, "Echo API")
+
+' Backends
+$Backend(echoBackend, "Echo Backend")
+
+' Operations
+!$operations = [
+    { "Method": "GET",    "Description": "Retrieve a resource",         "UrlTemplate": "/resources" },
+    { "Method": "POST",   "Description": "Create a resource",           "UrlTemplate": "/resources" },
+    { "Method": "PUT",    "Description": "Update a resource",           "UrlTemplate": "/resources/{id}" },
+    { "Method": "PATCH",  "Description": "Partially Update a resource", "UrlTemplate": "/resources/{id}" },
+    { "Method": "DELETE", "Description": "Delete a resource",           "UrlTemplate": "/resources/{id}" }
+]
+$Operations(echoApi, $operations)
+
+
+' Relationships
+johnDoe --> johnDoe_StarterSubscription
+johnDoe_StarterSubscription --> starterProduct
+
+aliceSmith --> aliceSmith_StarterSubscription
+aliceSmith_StarterSubscription --> starterProduct
+
+aliceSmith --> aliceSmith_UnlimitedSubscription
+aliceSmith_UnlimitedSubscription --> unlimitedProduct
+
+starterProduct --> echoApi
+unlimitedProduct --> echoApi
+echoApi --> echoBackend
+
+
+' Legend
+$createApimLegend()
+
+@enduml
