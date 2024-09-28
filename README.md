@@ -100,3 +100,41 @@ $ApimOperations(echoApi, $operations, "right")
 The diagram above will render as follows:
 
 ![Operations](./samples/operations.png)
+
+### Legend
+
+You can add a legend to your diagram to explain the different symbols using the `ApimLegend` macro.
+
+The macro takes the following parameters:
+
+| Parameter | Description |
+|-|-|
+| includeUser | Include the User symbol in the legend (default is `true`). |
+| includeSubscription | Include the Subscription symbol in the legend (default is `true`). |
+| includeProduct | Include the Product symbol in the legend (default is `true`). |
+| includeAPI | Include the API symbol in the legend (default is `true`). |
+| includeBackend | Include the Backend symbol in the legend (default is `true`). |
+| alignment | The position of the legend (default is `""`). |
+
+Here's an example of how to add a legend to your diagram with all symbols:
+
+```
+@startuml Legend
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+$ApimSymbolLegend()
+
+@enduml
+```
+
+The diagram above will render as follows:
+
+![Legend](./samples/legend.png)
+
+If you want to exclude certain symbols from the legend, you can do so by setting the corresponding parameter to `false`. For example, to exclude the User and Subscription symbols:
+
+```
+$ApimSymbolLegend($includeUser=%false(), $includeSubscription=%false(), $alignment="top")
+```
+

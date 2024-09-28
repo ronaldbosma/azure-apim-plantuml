@@ -1,0 +1,7 @@
+@startuml Legend
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+$ApimSymbolLegend()
+
+@enduml
