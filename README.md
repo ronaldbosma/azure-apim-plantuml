@@ -149,7 +149,7 @@ The diagram above will render as follows:
 
 ![Legend](./samples/legend.png)
 
-If you want to exclude certain symbols from the legend, you can do so by setting the corresponding parameter to `false`.  Here's an example of how to exclude the User and Subscription symbols:
+If you want to exclude certain symbols from the legend, you can do so by setting the corresponding parameter to `false`.  Here's an example of how to exclude the User and Subscription symbols, and place the legend at the top of the diagram:
 
 ```
 $ApimSymbolLegend($includeUser=%false(), $includeSubscription=%false(), $alignment="top")
