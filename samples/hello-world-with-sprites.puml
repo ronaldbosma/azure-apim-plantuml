@@ -1,0 +1,14 @@
+@startuml Hello World with Sprites
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+rectangle "<$ApimProductSprite>\nStarter" <<ApimProduct>> as starterProduct
+rectangle "<$ApimProductSprite>\nUnlimited" <<ApimProduct>> as unlimitedProduct
+rectangle "<$ApimAPISprite>\nEcho API" <<ApimAPI>> as echoApi
+rectangle "<$ApimBackendSprite{scale=3}>\nEcho Backend" <<ApimBackend>> as echoBackend
+
+starterProduct --> echoApi
+unlimitedProduct --> echoApi
+echoApi --> echoBackend
+
+@enduml

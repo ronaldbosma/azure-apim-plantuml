@@ -18,6 +18,7 @@ With Azure API Management PlantUML, you can create visually distinct and recogni
   - [Sample](#sample)
 - [Customizations](#customizations)
   - [Left to Right Direction](#left-to-right-direction)
+  - [Raw Sprites](#raw-sprites)
 
 
 ## Getting Started
@@ -299,3 +300,25 @@ $ApimSymbolLegend()
 The diagram above will render as follows:
 
 ![All Components - Left to Right](./samples/left-right.png)
+
+
+### Raw Sprites
+
+If you prefer to use raw SVG sprites in your PlantUML diagrams, you can include them directly. This allows for more flexibility in customizing the appearance of your components. Here's the same example from the getting started section that includes an API, two products, and a backend:
+
+```
+@startuml Hello World with Sprites
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+rectangle "<$ApimProductSprite>\nStarter" <<ApimProduct>> as starterProduct
+rectangle "<$ApimProductSprite>\nUnlimited" <<ApimProduct>> as unlimitedProduct
+rectangle "<$ApimAPISprite>\nEcho API" <<ApimAPI>> as echoApi
+rectangle "<$ApimBackendSprite{scale=3}>\nEcho Backend" <<ApimBackend>> as echoBackend
+
+starterProduct --> echoApi
+unlimitedProduct --> echoApi
+echoApi --> echoBackend
+
+@enduml
+```
