@@ -23,3 +23,15 @@ Or if you want to use the latest version, you can include it directly from this 
 !include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
 ```
 
+
+## Available Symbols
+
+The following symbols are available in the current version of Azure API Management PlantUML:
+
+| Resource | Symbol | Macro | Example Usage |
+|-|-|-|-|
+| API | ![API](./dist/v1/sprites/API.svg) | `ApimAPI` | `$ApimAPI(alias, "label")` |
+| Backend | ![Backend](./dist/v1/sprites/Backend.svg) | `ApimBackend` | `$ApimBackend(alias, "label")` |
+| Product | ![Product](./dist/v1/sprites/Product.svg) | `ApimProduct` | `$ApimProduct(alias, "label")` |
+| Subscription | ![Subscription](./dist/v1/sprites/Subscription.svg) | `ApimSubscription` | `$ApimSubscription(alias, "label")` |
+| User | ![User](./dist/v1/sprites/User.svg) | `ApimUser` | `$ApimUser(alias, "label")` |
