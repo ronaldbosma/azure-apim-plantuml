@@ -145,23 +145,6 @@ $setApimEntitySkin(ApimAPI)
 !endprocedure
 
 
-' Operations
-
-' Creates a note with a table containing the API operations
-!procedure $ApimOperations($api, $operations, $alignment="bottom")
-  !$numberOfOperations = %size($operations)
-  !$i=0
-
-  note $alignment of $api
-      |= Method |= Description |= URL Template |
-      !while $i < $numberOfOperations
-      | $operations[$i].Method | $operations[$i].Description | $operations[$i].UrlTemplate |
-      !$i = $i + 1
-      !endwhile
-  end note
-!endprocedure
-
-
 ' Backend
 
 sprite $ApimBackendSprite <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
@@ -178,4 +161,23 @@ $setApimEntitySkin(ApimBackend)
   ' The default icon is a bit too small, so we scale it up
   !$scale = 3
   $createApimBaseEntity($alias, $label, ApimBackendSprite, ApimBackend, $scale)
+!endprocedure
+
+
+' ##################################################
+' Operations
+' ##################################################
+
+' Creates a note with a table containing the API operations
+!procedure $ApimOperations($api, $operations, $alignment="bottom")
+  !$numberOfOperations = %size($operations)
+  !$i=0
+
+  note $alignment of $api
+      |= Method |= Description |= URL Template |
+      !while $i < $numberOfOperations
+      | $operations[$i].Method | $operations[$i].Description | $operations[$i].UrlTemplate |
+      !$i = $i + 1
+      !endwhile
+  end note
 !endprocedure
