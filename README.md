@@ -131,7 +131,7 @@ The macro takes the following parameters:
 | `$includeProduct` | Include the Product symbol in the legend (default is `true`). |
 | `$includeAPI` | Include the API symbol in the legend (default is `true`). |
 | `$includeBackend` | Include the Backend symbol in the legend (default is `true`). |
-| `$alignment` | The position of the legend (default is `""`). |
+| `$alignment` | The position of the legend (default is `bottom`). |
 
 Here's an example of how to add a legend to your diagram with all symbols:
 
