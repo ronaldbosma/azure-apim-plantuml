@@ -15,7 +15,7 @@ With Azure API Management PlantUML, you can create visually distinct and recogni
   - [Symbols](#symbols)
   - [API Operations](#api-operations)
   - [Legend](#legend)
-  - [Sample](#sample)
+  - [Sample Diagram](#sample-diagram)
 - [Customizations](#customizations)
   - [Left to Right Direction](#left-to-right-direction)
   - [Raw Sprites](#raw-sprites)
@@ -156,7 +156,7 @@ $ApimSymbolLegend($includeUser=%false(), $includeSubscription=%false(), $alignme
 ```
 
 
-### Sample
+### Sample Diagram
 
 Here's an example of a PlantUML diagram that includes all the available components:
 
