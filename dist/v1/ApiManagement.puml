@@ -163,7 +163,7 @@ $setApimEntitySkin(ApimBackend)
 ' ##################################################
 
 ' Creates a legend with the specified entities
-!procedure $createApimLegend($includeUser=%true(), $includeSubscription=%true(), $includeProduct=%true(), $includeApi=%true(), $includeBackend=%true(), $alignment="")
+!procedure $ApimSymbolLegend($includeUser=%true(), $includeSubscription=%true(), $includeProduct=%true(), $includeApi=%true(), $includeBackend=%true(), $alignment="")
   legend $alignment
     ' The <#FFFFFF,#FFFFFF> will hide the tables borders
 

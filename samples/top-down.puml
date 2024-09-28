@@ -48,6 +48,6 @@ echoApi --> echoBackend
 
 
 ' Legend
-$createApimLegend()
+$ApimSymbolLegend()
 
 @enduml
