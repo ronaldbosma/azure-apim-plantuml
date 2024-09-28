@@ -11,16 +11,16 @@ With Azure API Management PlantUML it is possible to create visually recognizabl
 
 To use the API Management symbols in your PlantUML diagrams, you'll need include [ApiManagement.puml](./dist/v1/ApiManagement.puml) at the top of your `.puml` file.
 
-You can either download the file locally and include it in your PlantUML diagram like this:
-
-```
-!include path/to/ApiManagement.puml
-```
-
-Or if you want to use the latest version, you can include it directly from this repository:
+If you want to use the latest version, you can include it in your PlantUML diagram directly from this repository:
 
 ```
 !include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+```
+
+Or, you can download the file locally and include it like this:
+
+```
+!include path/to/ApiManagement.puml
 ```
 
 
