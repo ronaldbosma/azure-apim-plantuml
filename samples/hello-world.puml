@@ -1,0 +1,14 @@
+@startuml Hello World
+
+!include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+
+$ApimProduct(starterProduct, "Starter")
+$ApimProduct(unlimitedProduct, "Unlimited")
+$ApimAPI(echoApi, "Echo API")
+$ApimBackend(echoBackend, "Echo Backend")
+
+starterProduct --> echoApi
+unlimitedProduct --> echoApi
+echoApi --> echoBackend
+
+@enduml
