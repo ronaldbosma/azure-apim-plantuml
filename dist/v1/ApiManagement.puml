@@ -46,8 +46,8 @@ table {
 
 
 ' Creates a legend with the specified entities
-!procedure $createApimLegend($includeUser=%true(), $includeSubscription=%true(), $includeProduct=%true(), $includeApi=%true(), $includeBackend=%true(), $position="")
-  legend $position
+!procedure $createApimLegend($includeUser=%true(), $includeSubscription=%true(), $includeProduct=%true(), $includeApi=%true(), $includeBackend=%true(), $alignment="")
+  legend $alignment
     ' The <#FFFFFF,#FFFFFF> will hide the tables borders
 
     !if ($includeUser == %true())
@@ -142,11 +142,11 @@ $setApimEntitySkin(Api)
 ' Operations
 
 ' Creates a note with a table containing the API operations
-!procedure $Operations($api, $operations, $position="bottom")
+!procedure $Operations($api, $operations, $alignment="bottom")
   !$numberOfOperations = %size($operations)
   !$i=0
 
-  note $position of $api
+  note $alignment of $api
       |= Method |= Description |= URL Template |
       !while $i < $numberOfOperations
       | $operations[$i].Method | $operations[$i].Description | $operations[$i].UrlTemplate |
