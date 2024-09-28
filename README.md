@@ -1,30 +1,30 @@
 # Azure API Management PlantUML
 
-[PlantUML](https://plantuml.com/) sprites, macros and stereotypes for creating PlantUML diagrams with [Azure API Management](https://azure.microsoft.com/products/api-management) components.
+This repository provides [PlantUML](https://plantuml.com/) sprites, macros, and stereotypes specifically designed for creating diagrams with [Azure API Management](https://azure.microsoft.com/products/api-management) components.
 
-[Azure-PlantUML](https://github.com/plantuml-stdlib/Azure-PlantUML) includes symbols from all Azure services, but it doesn't include symbols for the resources inside Azure API Management. This project aims to fill that gap.
+The [Azure-PlantUML](https://github.com/plantuml-stdlib/Azure-PlantUML) library includes symbols for a wide range of Azure services but does not cover the specific resources within Azure API Management. This project bridges that gap by providing the necessary visual elements.
 
-With Azure API Management PlantUML it is possible to create visually recognizable PlantUML diagrams for your API Management solutions.
+With Azure API Management PlantUML, you can create visually distinct and recognizable diagrams for your API Management solutions.
 
 
 ## Getting Started
 
-To use the API Management symbols in your PlantUML diagrams, you'll need include [ApiManagement.puml](./dist/v1/ApiManagement.puml) at the top of your `.puml` file.
+To use the Azure API Management symbols in your PlantUML diagrams, include the [ApiManagement.puml](./dist/v1/ApiManagement.puml) file at the top of your `.puml` file.
 
-If you want to use the latest version, you can include it in your PlantUML diagram directly from this repository:
+If you prefer to use the latest version directly from this repository, include the following line in your PlantUML diagram:
 
 ```
 !include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
 ```
 
-Or, you can download the file locally and include it like this:
+Alternatively, you can download the `ApiManagement.puml` file locally and include it in your diagram using the following syntax:
 
 ```
 !include path/to/ApiManagement.puml
 ```
 
-Next, you can use the available macros to add the API Management resources to your diagram. 
-Here's an example of a PlantUML diagram that includes an API, two products and a backend:
+Once you've included the `ApiManagement.puml` file, you can use the available macros to add API Management resources to your diagram. 
+Here's an example of a PlantUML diagram that includes an API, two products, and a backend:
 
 ```
 @startuml Hello World
@@ -64,7 +64,7 @@ The following symbols are available in the current version of Azure API Manageme
 
 ### API Operations
 
-It is possible to add operations to an API by using the `ApimAPIOperation` macro. This macro will render the operations as a table inside a note attached to the API.
+You can add operations to an API using the `ApimAPIOperation` macro. This macro renders the operations as a table inside a note attached to the API.
 
 The macro takes the following parameters:
 
@@ -103,7 +103,7 @@ The diagram above will render as follows:
 
 ### Legend
 
-You can add a legend to your diagram to explain the different symbols using the `ApimLegend` macro.
+You can add a legend to your diagram to explain the different symbols using the `ApimLegend` macro. This helps to clarify the meaning of each symbol used in your API Management diagram.
 
 The macro takes the following parameters:
 
@@ -208,7 +208,7 @@ The diagram above will render as follows:
 
 ### Left to Right Direction
 
-By default, PlantUML diagrams are rendered from top to bottom. In some cases it might be more convenient to render the diagram from left to right. You can achieve this by adding the following line at the top of your PlantUML file:
+By default, PlantUML diagrams are rendered from top to bottom. In some cases, it might be more convenient to render the diagram from left to right. You can achieve this by adding the following line at the top of your PlantUML file:
 
 ```
 left to right direction
