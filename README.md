@@ -75,6 +75,9 @@ The following symbols are available in the current version of Azure API Manageme
 | Subscription | ![Subscription](./dist/v1/sprites/Subscription.svg) | `ApimSubscription` | `$ApimSubscription(alias, "label")` |
 | User | ![User](./dist/v1/sprites/User.svg) | `ApimUser` | `$ApimUser(alias, "label")` |
 
+All macros take an `alias` and `label` as parameters. The `alias` serves as a unique identifier for the resource and can be used to establish relationships between resources. The `label` is the text displayed alongside the icon.
+
+
 ### API Operations
 
 You can add operations to an API using the `ApimAPIOperation` macro. This macro renders the operations as a table inside a note attached to the API.
