@@ -142,7 +142,7 @@ $setApimEntitySkin(Api)
 ' Operations
 
 ' Creates a note with a table containing the API operations
-!procedure $Operations($api, $operations, $position="right")
+!procedure $Operations($api, $operations, $position="bottom")
   !$numberOfOperations = %size($operations)
   !$i=0
 
