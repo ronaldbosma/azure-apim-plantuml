@@ -1,6 +1,7 @@
 @startuml Hello World
 
 !include https://raw.githubusercontent.com/ronaldbosma/azure-apim-plantuml/refs/heads/main/dist/v1/ApiManagement.puml
+' !include ./dist/v1/ApiManagement.puml
 
 ' Users
 $ApimUser(johnDoe, "John Doe")
@@ -16,7 +17,7 @@ $ApimProduct(starterProduct, "Starter")
 $ApimProduct(unlimitedProduct, "Unlimited")
 
 ' APIs
-$ApimApi(echoApi, "Echo API")
+$ApimAPI(echoApi, "Echo API")
 
 ' Backends
 $ApimBackend(echoBackend, "Echo Backend")
