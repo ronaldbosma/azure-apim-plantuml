@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AzureApimPlantuml.Tests/AzureApimPlantuml.Tests.csproj" />
+  <Project Path="AzureApimPlantuml/AzureApimPlantuml.csproj" />
+</Solution>
