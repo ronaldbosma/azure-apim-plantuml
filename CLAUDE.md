@@ -45,6 +45,34 @@ SVG source files live in `dist/v1/sprites/*.svg` and are embedded verbatim into 
 
 Raw sprites (`$ApimSprite`, `$ApimSubscriptionSprite`, etc.) are also available for use with `rectangle` syntax.
 
-## Planned CLI Tool
+## CLI Tool
 
-`docs/impact-map.md` describes a planned .NET global tool (`dotnet tool install -g`) that generates `.puml` diagrams from a live Azure API Management instance. It has not been implemented yet. The tool will authenticate via `DefaultAzureCredential`, call the Azure APIM REST API, and emit `.puml` files that `!include` `dist/v1/ApiManagement.puml`.
+`src/` contains a .NET 10.0 global tool (`azure-apim-plantuml`) that will generate `.puml` diagrams from a live Azure API Management instance. The tool authenticates via `DefaultAzureCredential`, calls the Azure APIM REST API, and emits `.puml` files that `!include` `dist/v1/ApiManagement.puml`.
+
+The tool is at an early skeleton stage — `Program.cs` contains only a placeholder. Feature work is driven by specs in `docs/specs/` (e.g., `FEAT-001-authenticate-to-azure.md`). The impact map and planned diagram types are in `docs/impact-map.md`.
+
+### Development Commands
+
+```bash
+# Build
+dotnet build src/AzureApimPlantuml.slnx
+
+# Run tests
+dotnet test src/AzureApimPlantuml.slnx
+
+# Run a single test class
+dotnet test src/AzureApimPlantuml.Tests --filter "ClassName=MyTestClass"
+
+# Run locally
+dotnet run --project src/AzureApimPlantuml
+
+# Pack as a global tool
+dotnet pack src/AzureApimPlantuml
+```
+
+### Project Structure
+
+- `src/AzureApimPlantuml/` — main executable, packaged as a dotnet global tool
+- `src/AzureApimPlantuml.Tests/` — MSTest 4 test project; main project exposes internals via `InternalsVisibleTo`
+- `docs/specs/` — feature specs that drive implementation; read the relevant spec before implementing a feature
+- `docs/architecture/` — arc42 architecture documentation (mostly scaffolding, fill in as decisions are made)
